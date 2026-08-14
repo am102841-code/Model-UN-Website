@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Thomas Russell Model United Nations</title>
+
+
+    <style>
+
+        /* =========================================
+           RESET
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            background: #f5f5f2;
+
+            color: #111111;
+
+            line-height: 1.5;
+        }
+
+
+        a {
+            color: inherit;
+
+            text-decoration: none;
+        }
+
+
+        /* =========================================
+           COLOR PALETTE
+        ========================================= */
+
+        :root {
+
+            --background: #f5f5f2;
+
+            --white: #ffffff;
+
+            --text: #111111;
+
+            --muted: #707070;
+
+            --border: #dddddd;
+
+            --navy: #102a43;
+
+            --blue: #2f80ed;
+
+            --light-blue: #6ba5f7;
+
+            --dark-blue: #091c2d;
+        }
+
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+
+        .navbar {
+
+            height: 80px;
+
+            padding: 0 6%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            border-bottom: 1px solid var(--border);
+
+            background: rgba(245, 245, 242, 0.95);
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 100;
+        }
+
+
+        .logo {
+
+            font-size: 21px;
+
+            font-weight: 800;
+
+            letter-spacing: -1px;
+
+            color: var(--navy);
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 28px;
+
+            align-items: center;
+        }
+
+
+        .nav-links a {
+
+            font-size: 14px;
+
+            color: #555555;
+
+            transition: 0.2s ease;
+        }
+
+
+        .nav-links a:hover {
+
+            color: var(--blue);
+        }
+
+
+        .support-nav {
+
+            padding: 12px 20px;
+
+            background: var(--blue);
+
+            color: white !important;
+
+            border-radius: 30px;
+
+            transition: 0.2s ease;
+        }
+
+
+        .support-nav:hover {
+
+            background: var(--navy);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .hero {
+
+            min-height: 90vh;
+
+            padding: 100px 10%;
+
+            display: flex;
+
+            align-items: center;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 450px;
+
+            height: 450px;
+
+            border-radius: 50%;
+
+            background: rgba(47, 128, 237, 0.08);
+
+            right: -120px;
+
+            top: 100px;
+
+            z-index: -1;
+        }
+
+
+        .hero-content {
+
+            max-width: 900px;
+        }
+
+
+        .eyebrow {
+
+            color: var(--blue);
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .hero h1 {
+
+            font-size: clamp(70px, 10vw, 150px);
+
+            line-height: 0.84;
+
+            letter-spacing: -8px;
+
+            font-weight: 800;
+        }
+
+
+        .hero h1 span {
+
+            color: var(--navy);
+        }
+
+
+        .hero-description {
+
+            max-width: 570px;
+
+            margin-top: 40px;
+
+            color: var(--muted);
+
+            font-size: 19px;
+
+            line-height: 1.7;
+        }
+
+
+        .hero-buttons {
+
+            display: flex;
+
+            gap: 15px;
+
+            margin-top: 35px;
+        }
+
+
+        /* =========================================
+           BUTTONS
+        ========================================= */
+
+        .primary-button {
+
+            display: inline-block;
+
+            background: var(--blue);
+
+            color: white;
+
+            padding: 15px 25px;
+
+            border-radius: 30px;
+
+            font-size: 14px;
+
+            transition: 0.2s ease;
+        }
+
+
+        .primary-button:hover {
+
+            background: var(--navy);
+
+            transform: translateY(-3px);
+        }
+
+
+        .secondary-button {
+
+            display: inline-block;
+
+            padding: 15px 25px;
+
+            border: 1px solid #cccccc;
+
+            border-radius: 30px;
+
+            font-size: 14px;
+
+            transition: 0.2s ease;
+        }
+
+
+        .secondary-button:hover {
+
+            border-color: var(--blue);
+
+            color: var(--blue);
+        }
+
+
+        /* =========================================
+           GENERAL SECTIONS
+        ========================================= */
+
+        .section {
+
+            padding: 130px 10%;
+        }
+
+
+        .section-label {
+
+            color: var(--blue);
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .section h2 {
+
+            font-size: clamp(50px, 6vw, 85px);
+
+            line-height: 0.9;
+
+            letter-spacing: -5px;
+
+            margin-bottom: 40px;
+        }
+
+
+        /* =========================================
+           ABOUT
+        ========================================= */
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 100px;
+
+            align-items: end;
+        }
+
+
+        .about-description {
+
+            max-width: 600px;
+
+            color: var(--muted);
+
+            font-size: 20px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           WHY WE MADE THE CLUB
+        ========================================= */
+
+        .mission {
+
+            margin: 0 6%;
+
+            padding: 120px 10%;
+
+            background: var(--navy);
+
+            color: white;
+
+            border-radius: 20px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .mission::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+
+            height: 350px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(107, 165, 247, 0.3);
+
+            right: -100px;
+
+            bottom: -100px;
+        }
+
+
+        .mission .section-label {
+
+            color: var(--light-blue);
+        }
+
+
+        .mission h2 {
+
+            font-size: clamp(55px, 7vw, 95px);
+
+            line-height: 0.9;
+
+            letter-spacing: -6px;
+
+            margin-bottom: 45px;
+
+            position: relative;
+
+            z-index: 1;
+        }
+
+
+        .mission p:not(.section-label) {
+
+            max-width: 650px;
+
+            color: #c5d0da;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            margin-bottom: 20px;
+
+            position: relative;
+
+            z-index: 1;
+        }
+
+
+        /* =========================================
+           TEAM
+        ========================================= */
+
+        .team-heading {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: end;
+
+            margin-bottom: 60px;
+        }
+
+
+        .team-heading h2 {
+
+            margin-bottom: 0;
+        }
+
+
+        .team-link {
+
+            color: var(--navy);
+
+            font-size: 14px;
+
+            transition: 0.2s ease;
+        }
+
+
+        .team-link:hover {
+
+            color: var(--blue);
+        }
+
+
+        .team-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 40px 25px;
+        }
+
+
+        .team-card {
+
+            cursor: pointer;
+        }
+
+
+        .team-photo {
+
+            height: 420px;
+
+            background: linear-gradient(
+                135deg,
+                #dce8f5,
+                #c9d9e8
+            );
+
+            border-radius: 10px;
+
+            margin-bottom: 20px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition: 0.3s ease;
+        }
+
+
+        .team-photo::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 100px;
+
+            height: 100px;
+
+            background: rgba(47, 128, 237, 0.15);
+
+            border-radius: 50%;
+
+            right: -25px;
+
+            top: -25px;
+        }
+
+
+        .team-card:hover .team-photo {
+
+            transform: translateY(-7px);
+        }
+
+
+        .team-card h3 {
+
+            font-size: 21px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .team-card p {
+
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           RESOURCES
+        ========================================= */
+
+        .resources-section {
+
+            padding-top: 100px;
+        }
+
+
+        .resources-heading {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 80px;
+
+            align-items: end;
+
+            margin-bottom: 70px;
+        }
+
+
+        .resources-heading h2 {
+
+            margin-bottom: 0;
+        }
+
+
+        .resources-heading h2 span {
+
+            color: var(--navy);
+        }
+
+
+        .resources-intro {
+
+            max-width: 520px;
+
+            color: var(--muted);
+
+            font-size: 18px;
+
+            line-height: 1.7;
+        }
+
+
+        .resources-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .resource-card {
+
+            min-height: 330px;
+
+            padding: 30px;
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+
+        .resource-card:hover {
+
+            transform: translateY(-7px);
+
+            border-color: var(--blue);
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.06);
+        }
+
+
+        .resource-number {
+
+            color: var(--blue);
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 55px;
+        }
+
+
+        .resource-card h3 {
+
+            color: var(--navy);
+
+            font-size: 26px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .resource-card p {
+
+            color: var(--muted);
+
+            font-size: 15px;
+
+            line-height: 1.6;
+
+            margin-bottom: 25px;
+        }
+
+
+        .resource-link {
+
+            margin-top: auto;
+
+            color: var(--blue);
+
+            font-size: 13px;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================================
+           SUPPORT
+        ========================================= */
+
+        .support-cta {
+
+            padding: 130px 10%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 50px;
+        }
+
+
+        .support-cta h2 {
+
+            font-size: clamp(50px, 6vw, 85px);
+
+            line-height: 0.9;
+
+            letter-spacing: -5px;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+
+            padding: 80px 6% 40px;
+
+            border-top: 1px solid var(--border);
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 20px;
+        }
+
+
+        .footer-title {
+
+            color: var(--navy);
+
+            font-size: 23px;
+
+            font-weight: 800;
+        }
+
+
+        .footer-tagline {
+
+            color: var(--muted);
+        }
+
+
+        .footer-links {
+
+            display: flex;
+
+            gap: 25px;
+
+            margin-top: 15px;
+        }
+
+
+        .footer-links a {
+
+            font-size: 14px;
+
+            transition: 0.2s ease;
+        }
+
+
+        .footer-links a:hover {
+
+            color: var(--blue);
+        }
+
+
+        .copyright {
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            margin-top: 30px;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 800px) {
+
+            .navbar {
+
+                padding: 0 5%;
+            }
+
+
+            .nav-links {
+
+                display: none;
+            }
+
+
+            .logo {
+
+                font-size: 17px;
+            }
+
+
+            .hero {
+
+                padding: 80px 6%;
+
+                min-height: 80vh;
+            }
+
+
+            .hero h1 {
+
+                letter-spacing: -4px;
+            }
+
+
+            .hero-buttons {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+
+            .section {
+
+                padding: 90px 6%;
+            }
+
+
+            .about-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 30px;
+            }
+
+
+            .mission {
+
+                margin: 0 3%;
+
+                padding: 80px 8%;
+            }
+
+
+            .mission h2 {
+
+                letter-spacing: -4px;
+            }
+
+
+            .team-heading {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 20px;
+            }
+
+
+            .team-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .team-photo {
+
+                height: 380px;
+            }
+
+
+            .resources-heading {
+
+                grid-template-columns: 1fr;
+
+                gap: 25px;
+            }
+
+
+            .resources-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .resource-card {
+
+                min-height: 280px;
+            }
+
+
+            .support-cta {
+
+                padding: 90px 6%;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+
+            footer {
+
+                padding: 60px 6% 30px;
+            }
+
+
+            .footer-links {
+
+                flex-wrap: wrap;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         NAVIGATION
+    ========================================= -->
+
+    <header class="navbar">
+
+        <a href="#" class="logo">
+            TRMS MUN
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#mission">
+                Our Mission
+            </a>
+
+            <a href="#team">
+                Team
+            </a>
+
+            <a href="#resources">
+                Resources
+            </a>
+
+        </nav>
+
+
+        <!--
+            REPLACE THIS WITH YOUR APPROVED
+            DONATION PAGE LINK
+        -->
+
+        <a
+            href="YOUR-DONATION-LINK-HERE"
+            class="support-nav"
+            target="_blank"
+        >
+            Support Us
+        </a>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- =========================================
+             HERO
+        ========================================= -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    THOMAS RUSSELL MODEL UNITED NATIONS
+                </p>
+
+
+                <h1>
+
+                    Debate.
+
+                    <br>
+
+                    <span>Diplomacy.</span>
+
+                    <br>
+
+                    Impact.
+
+                </h1>
+
+
+                <p class="hero-description">
+
+                    A student-led community where students
+                    explore global issues, develop leadership
+                    skills, and experience diplomacy firsthand.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#about"
+                        class="primary-button"
+                    >
+                        Explore Our Club
+                    </a>
+
+
+                    <a
+                        href="#team"
+                        class="secondary-button"
+                    >
+                        Meet the Team →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             ABOUT
+        ========================================= -->
+
+        <section
+            class="section"
+            id="about"
+        >
+
+            <p class="section-label">
+                01 — WHAT IS MODEL UN?
+            </p>
+
+
+            <div class="about-grid">
+
+                <h2>
+
+                    Diplomacy,
+
+                    <br>
+
+                    brought to life.
+
+                </h2>
+
+
+                <p class="about-description">
+
+                    Model United Nations is an educational
+                    simulation where students represent
+                    countries and work together to debate
+                    international issues, negotiate solutions,
+                    and create resolutions.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             WHY WE MADE THE CLUB
+        ========================================= -->
+
+        <section
+            class="mission"
+            id="mission"
+        >
+
+            <p class="section-label">
+                02 — WHY WE MADE THIS CLUB
+            </p>
+
+
+            <h2>
+
+                More than
+
+                <br>
+
+                just debate.
+
+            </h2>
+
+
+            <p>
+
+                We created Thomas Russell Model UN to give
+                students a place to build confidence,
+                learn about the world, and develop skills
+                that extend beyond the classroom.
+
+            </p>
+
+
+            <p>
+
+                Whether you're an experienced speaker or
+                stepping up to a podium for the first time,
+                our goal is to create a welcoming environment
+                where everyone can learn, collaborate, and lead.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================================
+             MEET THE TEAM
+        ========================================= -->
+
+        <section
+            class="section"
+            id="team"
+        >
+
+            <div class="team-heading">
+
+                <div>
+
+                    <p class="section-label">
+                        03 — MEET THE TEAM
+                    </p>
+
+
+                    <h2>
+
+                        The people
+
+                        <br>
+
+                        behind TRMS MUN.
+
+                    </h2>
+
+                </div>
+
+
+                <a
+                    href="#team"
+                    class="team-link"
+                >
+                    Meet our team →
+                </a>
+
+            </div>
+
+
+
+            <div class="team-grid">
+
+
+                <!-- PRESIDENT -->
+
+                <div class="team-card">
+
+                    <div class="team-photo">
+                    </div>
+
+
+                    <h3>
+                        Your Name
+                    </h3>
+
+
+                    <p>
+                        President
+                    </p>
+
+                </div>
+
+
+
+                <!-- VICE PRESIDENT -->
+
+                <div class="team-card">
+
+                    <div class="team-photo">
+                    </div>
+
+
+                    <h3>
+                        Team Member
+                    </h3>
+
+
+                    <p>
+                        Vice President
+                    </p>
+
+                </div>
+
+
+
+                <!-- SECRETARY -->
+
+                <div class="team-card">
+
+                    <div class="team-photo">
+                    </div>
+
+
+                    <h3>
+                        Team Member
+                    </h3>
+
+
+                    <p>
+                        Secretary
+                    </p>
+
+                </div>
+
+
+
+                <!-- TREASURER -->
+
+                <div class="team-card">
+
+                    <div class="team-photo">
+                    </div>
+
+
+                    <h3>
+                        Ankitha Mukund
+                    </h3>
+
+
+                    <p>
+                        Treasurer
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             RESOURCES
+        ========================================= -->
+
+        <section
+            class="section resources-section"
+            id="resources"
+        >
+
+            <div class="resources-heading">
+
+                <div>
+
+                    <p class="section-label">
+                        04 — RESOURCES
+                    </p>
+
+
+                    <h2>
+
+                        Prepare.
+
+                        <br>
+
+                        Research.
+
+                        <br>
+
+                        <span>Represent.</span>
+
+                    </h2>
+
+                </div>
+
+
+                <p class="resources-intro">
+
+                    Helpful resources for learning about Model UN,
+                    researching countries, preparing speeches,
+                    and becoming a stronger delegate.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="resources-grid">
+
+
+                <!-- RESOURCE 1 -->
+
+                <a
+                    href="https://bestdelegate.com/"
+                    target="_blank"
+                    class="resource-card"
+                >
+
+                    <div class="resource-number">
+                        01
+                    </div>
+
+
+                    <h3>
+                        Best Delegate
+                    </h3>
+
+
+                    <p>
+
+                        Guides and tips for Model UN beginners,
+                        delegates, chairs, and conference preparation.
+
+                    </p>
+
+
+                    <span class="resource-link">
+                        Visit resource →
+                    </span>
+
+                </a>
+
+
+
+                <!-- RESOURCE 2 -->
+
+                <a
+                    href="https://unausa.org/model-united-nations/"
+                    target="_blank"
+                    class="resource-card"
+                >
+
+                    <div class="resource-number">
+                        02
+                    </div>
+
+
+                    <h3>
+                        UNA-USA
+                    </h3>
+
+
+                    <p>
+
+                        Learn about Model UN and explore resources
+                        connected to the United Nations and global issues.
+
+                    </p>
+
+
+                    <span class="resource-link">
+                        Visit resource →
+                    </span>
+
+                </a>
+
+
+
+                <!-- RESOURCE 3 -->
+
+                <a
+                    href="https://www.un.org/en/"
+                    target="_blank"
+                    class="resource-card"
+                >
+
+                    <div class="resource-number">
+                        03
+                    </div>
+
+
+                    <h3>
+                        United Nations
+                    </h3>
+
+
+                    <p>
+
+                        The official UN website for researching
+                        countries, international issues,
+                        organizations, and global topics.
+
+                    </p>
+
+
+                    <span class="resource-link">
+                        Visit resource →
+                    </span>
+
+                </a>
+
+
+
+                <!-- RESOURCE 4 -->
+
+                <a
+                    href="https://www.thimun.org/"
+                    target="_blank"
+                    class="resource-card"
+                >
+
+                    <div class="resource-number">
+                        04
+                    </div>
+
+
+                    <h3>
+                        THIMUN
+                    </h3>
+
+
+                    <p>
+
+                        Explore conference information,
+                        educational material, and Model UN resources.
+
+                    </p>
+
+
+                    <span class="resource-link">
+                        Visit resource →
+                    </span>
+
+                </a>
+
+
+
+                <!-- RESOURCE 5 -->
+
+                <a
+                    href="https://www.un.org/en/about-us/member-states"
+                    target="_blank"
+                    class="resource-card"
+                >
+
+                    <div class="resource-number">
+                        05
+                    </div>
+
+
+                    <h3>
+                        UN Member States
+                    </h3>
+
+
+                    <p>
+
+                        A useful starting point when researching
+                        the country your delegation represents.
+
+                    </p>
+
+
+                    <span class="resource-link">
+                        Research a country →
+                    </span>
+
+                </a>
+
+
+
+                <!-- RESOURCE 6 -->
+
+                <a
+                    href="https://www.un.org/en/our-work"
+                    target="_blank"
+                    class="resource-card"
+                >
+
+                    <div class="resource-number">
+                        06
+                    </div>
+
+
+                    <h3>
+                        UN Global Issues
+                    </h3>
+
+
+                    <p>
+
+                        Research major international issues and
+                        learn about the work of the United Nations.
+
+                    </p>
+
+
+                    <span class="resource-link">
+                        Explore issues →
+                    </span>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             SUPPORT
+        ========================================= -->
+
+        <section class="support-cta">
+
+            <div>
+
+                <p class="section-label">
+                    SUPPORT TRMS MUN
+                </p>
+
+
+                <h2>
+
+                    Help us create
+
+                    <br>
+
+                    more opportunities.
+
+                </h2>
+
+            </div>
+
+
+            <!--
+                REPLACE THIS WITH YOUR APPROVED
+                DONATION LINK
+            -->
+
+            <a
+                href="YOUR-DONATION-LINK-HERE"
+                class="primary-button"
+                target="_blank"
+            >
+                Support Our Club →
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
+
+    <footer>
+
+        <div class="footer-title">
+            THOMAS RUSSELL MODEL UNITED NATIONS
+        </div>
+
+
+        <p class="footer-tagline">
+            TRMS MUN — Debate. Diplomacy. Impact.
+        </p>
+
+
+        <div class="footer-links">
+
+            <a href="#about">
+                About
+            </a>
+
+
+            <a href="#mission">
+                Our Mission
+            </a>
+
+
+            <a href="#team">
+                Team
+            </a>
+
+
+            <a href="#resources">
+                Resources
+            </a>
+
+
+            <a
+                href="YOUR-DONATION-LINK-HERE"
+                target="_blank"
+            >
+                Support
+            </a>
+
+        </div>
+
+
+        <p class="copyright">
+
+            © 2026 Thomas Russell Model United Nations
+
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
